@@ -3,15 +3,15 @@
 # Example usage: docker run -it -v$(pwd)/..:/workspace/TRTorch build_trtorch_wheel /bin/bash /workspace/TRTorch/py/build_whl.sh
 
 export CXX=g++
-export CUDA_HOME=/usr/local/cuda-12.1
+export CUDA_HOME=/usr/local/cuda-12.4
 export PROJECT_DIR=/workspace/project
 
 rm -rf /usr/local/cuda
 
-if [[ $CUDA_HOME == "/usr/local/cuda-12.1" ]]; then
+if [[ $CUDA_HOME == "/usr/local/cuda-12.4" ]]; then
     cp -r /usr/local/cuda-11.8 /usr/local/cuda
     cp -r /usr/local/cuda-12.0/ /usr/local/cuda/
-    rsync -a /usr/local/cuda-12.1/ /usr/local/cuda/
+    rsync -a /usr/local/cuda-12.4/ /usr/local/cuda/
     export CUDA_HOME=/usr/local/cuda
 else
     ln -s $CUDA_HOME /usr/local/cuda

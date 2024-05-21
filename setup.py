@@ -503,6 +503,7 @@ if not (PY_ONLY or NO_TS):
                 dir_path + "torch_tensorrt/include",
                 dir_path + "/../bazel-TRTorch/external/tensorrt/include",
                 dir_path + "/../bazel-Torch-TensorRT/external/tensorrt/include",
+                dir_path + "/../bazel-pytorch-TensorRT/external/tensorrt/include",
                 dir_path + "/../bazel-TensorRT/external/tensorrt/include",
                 dir_path + "/../bazel-tensorrt/external/tensorrt/include",
                 dir_path + "/../",

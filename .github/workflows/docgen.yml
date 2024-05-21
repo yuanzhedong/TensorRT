@@ -15,7 +15,7 @@ jobs:
       image: docker.io/pytorch/manylinux-builder:cuda12.1
       options: --gpus all
     env:
-      CUDA_HOME: /usr/local/cuda-12.1
+      CUDA_HOME: /usr/local/cuda-12.4
       VERSION_SUFFIX: cu121
       CI_BUILD: 1
     steps:
