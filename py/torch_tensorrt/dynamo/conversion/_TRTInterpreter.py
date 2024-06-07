@@ -333,13 +333,13 @@ class TRTInterpreter(torch.fx.Interpreter):  # type: ignore[misc]
             builder_config, self.compilation_settings.timing_cache_path
         )
 
-        engine = self.builder.build_serialized_network(self.ctx.net, builder_config)
-        assert engine
+        serialized_engine = self.builder.build_serialized_network(self.ctx.net, builder_config)
+        assert serialized_engine
 
         _LOGGER.info(
             f"Build TRT engine elapsed time: {datetime.now() - build_engine_start_time}"
         )
-        _LOGGER.info(f"TRT Engine uses: {engine.nbytes} bytes of Memory")
+        _LOGGER.info(f"TRT Engine uses: {serialized_engine.nbytes} bytes of Memory")
 
         self._save_timing_cache(
             builder_config, self.compilation_settings.timing_cache_path
